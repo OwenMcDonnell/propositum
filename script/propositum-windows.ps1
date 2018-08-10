@@ -32,7 +32,7 @@ elseif ($env:computername -match "NDS.*") {"local-gs"} # Check for a GS NDS
 else {"local"}
 
 . ./propositum-helper-fns.ps1
-
+Write-Host "returned from helper-fns script"
 Try
 {
     $environmentVars = Import-CSV "vars-platform.csv"
