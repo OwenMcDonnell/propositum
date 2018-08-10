@@ -32,7 +32,7 @@ elseif ($env:computername -match "NDS.*") {"local-gs"} # Check for a GS NDS
 else {"local"}
 
 . ./propositum-helper-fns.ps1
-Write-Host "returned from helper-fns script"
+
 Try
 {
     $environmentVars = Import-CSV "vars-platform.csv"
@@ -62,7 +62,7 @@ if ($testing -and $propositumLocation) {Remove-Item ($propositumLocation+"\*") -
 subst $drv $propositumLocation
 
 $createdDirs = Path-CheckOrCreate -Paths $propositum.values -CreateDir
-
+Write-Host "returned from helper-fns script"
 cd $propositum.root
 
 [Net.ServicePointManager]::SecurityProtocol = "Tls12, Tls11, Tls, Ssl3"
