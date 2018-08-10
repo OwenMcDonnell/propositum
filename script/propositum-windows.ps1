@@ -89,7 +89,8 @@ $propositumRepo = [ordered]@{
 
 # Clone the repo (if not AppVeyor as it is already cloned for us)
 if(-not $buildPlatform -eq "appveyor"){Github-CloneRepo "" $propositumRepo $propositumLocation}
-
+pip install pipenv cryptography
+write-host "pip install finished"
 scoop install superset-p #cmder autohotkey rawgraphs-p regfont-p emacs-p doom-emacs-develop-p texteditoranywhere-p superset-p # knime-p
 
 if ($buildPlatform -eq "appveyor")
